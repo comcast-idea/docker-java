@@ -18,3 +18,6 @@ RUN add-apt-repository -y ppa:webupd8team/java && \
     rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
+
+RUN sed -e 's%^\(securerandom.source\)=.*%\1=file:/dev/./urandom%' \
+        -i $JAVA_HOME/jre/lib/security/java.security
