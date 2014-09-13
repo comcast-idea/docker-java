@@ -16,3 +16,5 @@ RUN add-apt-repository -y ppa:webupd8team/java && \
     apt-get install -y oracle-java7-installer && \
     apt-get clean && \
     rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/*
+
+ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
